@@ -5,6 +5,9 @@ using UnityEngine;
 public class Master : MonoBehaviour
 {
     public GameObject planet;
+    public Transform spaceship;
+
+    public int points;
 
     // Start is called before the first frame update
     void Start()
