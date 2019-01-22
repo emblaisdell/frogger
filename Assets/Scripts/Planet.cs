@@ -18,12 +18,14 @@ public class Planet : MonoBehaviour
     public static float atmoMult = 1.1f;
     float radius;
 
+    private bool hitYet = false;
+
     private Vector3 direction;
     
     void Start()
     {
         radius = 150 + 250 * Random.value;
-        transform.localScale = new Vector3(radius, radius, radius);
+        transform.localScale = new Vector3(2 * radius, 2 * radius, 2 * radius);
         direction = creationDirection;
 
         master = FindObjectOfType<Master>();
@@ -39,14 +41,13 @@ public class Planet : MonoBehaviour
             Instantiate(master.planet, lastPlanetPos, Quaternion.identity, null);
             Destroy(gameObject);
         }
-        if (Vector3.Distance(Spaceship.spaceship.position, transform.position) <= atmoMult * radius)
+        if (!hitYet && Vector3.Distance(Spaceship.spaceship.position, transform.position) <= atmoMult * radius)
         {
             print("hit");
         }
-    }
-
-    void GetHit()
-    {
-
+        if (Vector3.Distance(Spaceship.spaceship.position, transform.position) <= radius)
+        {
+            print("lose game");
+        }
     }
 }

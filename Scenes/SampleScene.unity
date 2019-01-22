@@ -400,8 +400,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b0a828163d54a24b8066a7df943ca93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turnSpeed: 5
-  moveSpeed: 100
+  turnSpeed: 10
+  moveSpeed: 150
 --- !u!1 &1961923516
 GameObject:
   m_ObjectHideFlags: 0
@@ -447,3 +447,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   planet: {fileID: 3734531415145627295, guid: 8c07527408227c64c9843771fc963399, type: 3}
   spaceship: {fileID: 1189062132}
+  points: 0
